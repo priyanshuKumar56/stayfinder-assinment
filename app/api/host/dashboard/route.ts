@@ -29,7 +29,8 @@ function checkRateLimit(clientId: string): boolean {
 
 export async function GET(request: NextRequest) {
   try {
-    const { searchParams } = new URL(request.url)
+    const searchParams = request.nextUrl.searchParams
+
     const hostId = searchParams.get("hostId")
 
     if (!hostId) {

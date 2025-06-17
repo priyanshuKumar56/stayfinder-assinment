@@ -4,7 +4,7 @@ export const dynamic = 'force-dynamic'
 export async function GET(request: NextRequest) {
   try {
     const supabase = createServerClient()
-    const { searchParams } = new URL(request.url)
+    const searchParams = request.nextUrl.searchParams
     const propertyId = searchParams.get("propertyId")
 
     if (!propertyId) {

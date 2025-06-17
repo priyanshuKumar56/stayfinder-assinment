@@ -4,7 +4,7 @@ export const dynamic = 'force-dynamic'
 export async function GET(request: NextRequest) {
   try {
     const supabase = createServerClient()
-    const { searchParams } = new URL(request.url)
+    const searchParams = request.nextUrl.searchParams
 
     const page = Number.parseInt(searchParams.get("page") || "1")
     const limit = Number.parseInt(searchParams.get("limit") || "12")
