@@ -1,6 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server"
 import { createServerClient } from "@/lib/supabase"
-
+export const dynamic = 'force-dynamic'
 // Simple in-memory cache for dashboard data
 const dashboardCache = new Map<string, { data: any; timestamp: number }>()
 const CACHE_DURATION = 60000 // 1 minute cache
